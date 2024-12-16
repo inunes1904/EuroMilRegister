@@ -11,6 +11,7 @@ class EuromilService(euromil_pb2_grpc.EuromilServicer):
             message = f"Bet registered with key: {request.key} and check ID: {request.checkid}."
             return euromil_pb2.RegisterReply(message=message)
         else:
+            #Invalid input no key or/and check id
             return euromil_pb2.RegisterReply(message="Invalid input. Both key and check ID are required.")
 
 
